@@ -1,0 +1,28 @@
+$desktopMinWidth: 992px !default;
+$desktopMaxWidth: 1280px !default;
+$tabletMinWidth: 767px !default;
+$tabletMaxWidth: 992px !default;
+$largePhoneMinWidth: 600px !default;
+$largePhoneMaxWidth: 767px !default;
+$phoneMaxWidth: 600px !default;
+// $phoneMinWidth: 320px !default;
+
+@mixin if-device($device) {
+  @if $device == desktop {
+    @media only screen and (min-width: $desktopMinWidth) and (max-width: $desktopMaxWidth) {
+      @content;
+    }
+  } @else if $device == tablet {
+    @media only screen and (min-width: $tabletMinWidth) and (max-width: $tabletMaxWidth) {
+      @content;
+    }
+  } @else if $device == largephone {
+    @media only screen and (min-width: $largePhoneMinWidth) and (max-width: $largePhoneMaxWidth) {
+      @content;
+    }
+  } @else if $device == phone {
+    @media only screen and (max-width: $phoneMaxWidth) {
+      @content;
+    }
+  }
+}

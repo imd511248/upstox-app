@@ -1,0 +1,193 @@
+@import "../Styles/breakpoint.scss";
+
+.negative {
+  color: red;
+}
+.positive {
+  color: green;
+}
+.container {
+  max-width: 800px;
+  margin: 70px auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid rgb(116, 153, 116);
+  @include if-device(phone) {
+    width: 97%;
+    margin: 10px auto;
+    padding: 0;
+  }
+  & > :nth-child(2) i {
+    color: green;
+  }
+  & > i {
+    font-size: 70px;
+    color: #39c0e5;
+    margin: 0 10px;
+  }
+  & > h1 {
+    color: #333;
+    margin: 10px auto 2px auto;
+    @include if-device(phone) {
+      font-size: 1.7em;
+      font-weight: 700;
+    }
+  }
+  & > h2 {
+    color: #333;
+    margin: 0 auto 30px auto;
+    @include if-device(phone) {
+      color: #333;
+      margin: 0 auto 30px auto;
+      font-size: 19px;
+      font-weight: 500;
+    }
+  }
+
+  &__flexBox {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    @include if-device(phone) {
+      font-size: 15px !important;
+    }
+    & > :hover {
+      background-color: #b7dfec;
+    }
+
+    &__wrapBox {
+      flex: 1;
+      height: 45px;
+      line-height: 45px;
+      background-color: #d2e4ea;
+      color: rgb(3, 3, 3);
+      border-radius: 5px;
+      margin: 0 10px;
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include if-device(phone) {
+        margin: 0 3px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 13px;
+      }
+      & > li {
+        width: 100%;
+      }
+      &__active {
+        color: rgb(251, 249, 249);
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background-color: #546e89;
+        border-radius: 5px;
+        &:before {
+          position: absolute;
+          left: 10%;
+          bottom: 3px;
+          width: 82%;
+          height: 2px;
+          background-color: rgb(255, 255, 255);
+          content: "";
+          z-index: 1;
+        }
+      }
+    }
+  }
+  &__parentData {
+    background-color: #b8b8b8;
+    padding: 24px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    &__ulList {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      background: rgb(228 228 228);
+      padding: 0px 100px 0 44px;
+      @include if-device(phone) {
+        margin: 0 0 6px 0;
+        padding: 0;
+      }
+      &:hover {
+        background: rgb(255, 255, 255);
+      }
+      &:hover &__icon {
+        opacity: 1;
+      }
+      &__icon {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        & > li {
+          display: block;
+          font-size: 20px;
+          letter-spacing: 2px;
+          padding: 4px 0;
+          border: 1px solid green;
+          border-radius: 3px;
+
+          @include if-device(phone) {
+            font-size: 15px !important;
+          }
+          &.clicked {
+            color: red;
+          }
+          &.clicked2 {
+            color: red;
+          }
+          & > i {
+            padding: 0px 8px;
+          }
+        }
+        &__watch {
+          color: red;
+        }
+        &__cart {
+          color: red;
+        }
+      }
+      & > div {
+        & > li {
+          display: block;
+          font-size: 20px;
+          letter-spacing: 2px;
+          padding: 4px 0;
+          @include if-device(phone) {
+            letter-spacing: 2px !important;
+            padding: 5px 5px !important;
+          }
+        }
+      }
+    }
+  }
+  & > div {
+    margin: 15px auto;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: poppins, sans-serif;
+    @include if-device(phone) {
+      width: 98%;
+      font-size: 24px;
+      padding: 3px;
+    }
+    & > span {
+      @include if-device(phone) {
+        color: transparent;
+        font-size: 0px;
+      }
+      & > input {
+        font-size: 20px;
+        padding: 5px 0 5px 10px;
+      }
+    }
+  }
+}
