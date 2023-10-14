@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ListData from "../upstoxList/list";
 import Styles from "../UpstoxData/Styles.module.scss";
 
@@ -64,7 +64,7 @@ const Upstoxs = () => {
   //////////////////////////////////////  State  section //////////////////////////////////////////////
   const [data, setData] = useState(origionalData);
 
-  const [copyData, setCopyData] = useState(origionalData);
+  const [copyData] = useState(origionalData);
 
   const [tab, setTab] = useState("stockData");
 
@@ -72,7 +72,7 @@ const Upstoxs = () => {
 
   const [cart, setCart] = useState([]);
 
-  const [searchValue, setSearchValue] = useState([]);
+  const [searchValue] = useState([]);
   //////////////////////////////////////  Tab handler section //////////////////////////////////////////////
   const TabHandlerFuntion = (e) => {
     setTab(e);
